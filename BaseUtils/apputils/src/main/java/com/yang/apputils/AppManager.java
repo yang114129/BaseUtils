@@ -1,7 +1,13 @@
-package com.yang.baseutils;
+package com.yang.apputils;
+
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
+
+import java.util.Stack;
 
 /*
- * Copyright  2017 [AllenCoderr]
+ * Copyright  2017 [yang]
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +73,6 @@ public class AppManager {
      */
     public void finishActivity() {
         Activity activity = activityStack.lastElement();
-
     }
 
     /**
