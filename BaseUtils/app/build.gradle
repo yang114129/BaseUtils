@@ -6,10 +6,17 @@ android {
     defaultConfig {
         applicationId "com.yang.baseutils"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "JHYDkZD10w54vujXXdqED8",
+                GETUI_APP_KEY   : "6loj8B1rjZ7YK5buv19uL8",
+                GETUI_APP_SECRET: "9R7QCIdNQL7zlIKPaag897",
+                PACKAGE_NAME    : "com.yang.baseutils"
+        ]
     }
     buildTypes {
         release {
@@ -21,10 +28,11 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+//    compile 'com.github.yang114129.BaseUtils:apputils:1.0'
+    compile 'com.github.yang114129:BaseUtils:-SNAPSHOT'
+    compile 'com.github.vondear:RxTools:v1.7.6.4'//请替换成上方 JitPack 最新的版本号
+
+    compile project(':push_library')
 }

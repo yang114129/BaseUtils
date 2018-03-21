@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!--<service-->
+            <!--android:name="com.yang.push.service.GeTuiService"-->
+            <!--android:exported="true"-->
+            <!--android:label="PushService"-->
+            <!--android:process=":pushservice"></service>-->
+
+        <!--<service android:name="com.yang.push.service.GetuiIntentService" />-->
+
     </application>
+
+
 
 </manifest>

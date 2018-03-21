@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.yang.push">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 自定义权限 -->
+    <!--<uses-permission android:name="getui.permission.GetuiService.com.yang.baseutils" />-->
+
+    <!-- 支持iBeancon 需要蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- 支持个推3.0 电子围栏功能 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <!--<meta-data-->
+            <!--android:name="PUSH_APPID"-->
+            <!--android:value="${GETUI_APP_ID}" /> &lt;!&ndash; 替换为第三方应用的APPID &ndash;&gt;-->
+        <!--<meta-data-->
+            <!--android:name="PUSH_APPKEY"-->
+            <!--android:value="${GETUI_APP_KEY}" /> &lt;!&ndash; 替换为第三方应用的APPKEY &ndash;&gt;-->
+        <!--<meta-data-->
+            <!--android:name="PUSH_APPSECRET"-->
+            <!--android:value="${GETUI_APP_SECRET}" /> &lt;!&ndash; 替换为第三方应用的APPSECRET &ndash;&gt;-->
+
+
+        <service
+            android:name="com.yang.push.service.GeTuiService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice"></service>
+
+        <service android:name="com.yang.push.service.GetuiIntentService" />
+    </application>
+
+</manifest>
